@@ -180,6 +180,26 @@ export default function RestaurantList({
     if (page > totalPages) setPage(1);
   }, [totalPages]);
 
+  // build compact page items for pagination (numbers and ellipses)
+  const getPageItems = (current: number, totalP: number) => {
+    const items: (number | string)[] = [];
+    const maxButtons = 5;
+    if (totalP <= maxButtons) {
+      for (let i = 1; i <= totalP; i++) items.push(i);
+      return items;
+    }
+
+    const left = Math.max(2, current - 1);
+    const right = Math.min(totalP - 1, current + 1);
+
+    items.push(1);
+    if (left > 2) items.push("...");
+    for (let i = left; i <= right; i++) items.push(i);
+    if (right < totalP - 1) items.push("...");
+    items.push(totalP);
+    return items;
+  };
+
   return (
     <>
       <div className="mx-auto w-full mb-10 max-w-6xl">
@@ -245,10 +265,11 @@ export default function RestaurantList({
           )}
         </div>
           {/* Pagination controls */}
-          <div className="w-full flex items-center justify-between mt-6 px-4">
+          <div className="w-full flex flex-col sm:flex-row items-center justify-between mt-6 px-4 gap-2 overflow-x-hidden">
             <div className="text-sm text-gray-600">
-              Showing {Math.min(total, start + 1)} - {Math.min(total, start + paginated.length)} of {total}
+              Showing {total === 0 ? 0 : start + 1} - {start + paginated.length} of {total}
             </div>
+
             <div className="flex items-center gap-2">
               <button
                 className="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50"
@@ -258,19 +279,25 @@ export default function RestaurantList({
                 Prev
               </button>
 
-              {/* simple page buttons */}
-              {Array.from({ length: totalPages }).map((_, idx) => {
-                const p = idx + 1;
-                return (
-                  <button
-                    key={p}
-                    className={`px-3 py-1 rounded ${p === page ? 'bg-blue-600 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-                    onClick={() => setPage(p)}
-                  >
-                    {p}
-                  </button>
-                );
-              })}
+              {/* page buttons - hidden on small screens to avoid overflow */}
+              <div className="hidden sm:flex items-center gap-2 flex-wrap">
+                {getPageItems(page, totalPages).map((it, idx) =>
+                  typeof it === "string" ? (
+                    <span key={`e-${idx}`} className="px-3 py-1 text-gray-500">{it}</span>
+                  ) : (
+                    <button
+                      key={it}
+                      className={`px-3 py-1 rounded ${it === page ? "bg-blue-600 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
+                      onClick={() => setPage(it)}
+                    >
+                      {it}
+                    </button>
+                  )
+                )}
+              </div>
+
+              {/* compact page indicator for small screens */}
+              <div className="sm:hidden text-sm text-gray-600 px-2">{page} / {totalPages}</div>
 
               <button
                 className="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50"
