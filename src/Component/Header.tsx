@@ -34,7 +34,6 @@ export default function Header({ query, onSearchChange, location, onLocationChan
             <option value="Bangalore">Bangalore</option>
             <option value="Delhi">Delhi</option>
           </select>
-          <ChevronDown className="h-4 w-4 ml-1 text-gray-500" />
         </div>
 
         {/* Divider */}
