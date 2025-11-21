@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "restaurantName": "Karavalli",
+    "name": "Coastal Fish Curry",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=80",
+    "rating": 4.6,
+    "cookTimeMinutes": 30,
+    "location": "Bangalore",
+    "coords": { "lat": 12.9601, "lon": 77.5936 }
+  },
+  {
+    "id": 2,
+    "restaurantName": "Truffles",
+    "name": "Classic Burger",
+    "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1200&q=80",
+    "rating": 4.4,
+    "cookTimeMinutes": 20,
+    "location": "Bangalore",
+    "coords": { "lat": 12.9719, "lon": 77.6412 }
+  },
+  {
+    "id": 3,
+    "restaurantName": "The Bombay Canteen",
+    "name": "Seafood Thali",
+    "image": "https://images.unsplash.com/photo-1541542684-4b7a6c9497a4?w=1200&q=80",
+    "rating": 4.5,
+    "cookTimeMinutes": 35,
+    "location": "Mumbai",
+    "coords": { "lat": 19.0760, "lon": 72.8777 }
+  },
+  {
+    "id": 4,
+    "restaurantName": "Shizusan",
+    "name": "Ramen Bowl",
+    "image": "https://images.unsplash.com/photo-1543353071-087092ec393a?w=1200&q=80",
+    "rating": 4.2,
+    "cookTimeMinutes": 25,
+    "location": "Pune",
+    "coords": { "lat": 18.5204, "lon": 73.8567 }
+  },
+  {
+    "id": 5,
+    "restaurantName": "Bukhara",
+    "name": "Tandoori Platter",
+    "image": "https://images.unsplash.com/photo-1526318472351-c75fcf0704d1?w=1200&q=80",
+    "rating": 4.7,
+    "cookTimeMinutes": 40,
+    "location": "Delhi",
+    "coords": { "lat": 28.6139, "lon": 77.2090 }
+  },
+  {
+    "id": 6,
+    "restaurantName": "Cafe 24",
+    "name": "Pancake Stack",
+    "image": "https://images.unsplash.com/photo-1555992336-d5f5f3f7c0e6?w=1200&q=80",
+    "rating": 4.1,
+    "cookTimeMinutes": 15,
+    "location": "Chhindwara",
+    "coords": { "lat": 22.4333, "lon": 78.6167 }
+  },
+  {
+    "id": 7,
+    "restaurantName": "Indigo",
+    "name": "Modern Indian",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80",
+    "rating": 4.5,
+    "cookTimeMinutes": 30,
+    "location": "Bangalore",
+    "coords": { "lat": 12.9718, "lon": 77.6413 }
+  },
+  {
+    "id": 8,
+    "restaurantName": "The Village",
+    "name": "North Indian Thali",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+    "rating": 4.3,
+    "cookTimeMinutes": 25,
+    "location": "Mumbai",
+    "coords": { "lat": 19.0728, "lon": 72.8826 }
+  }
+]
